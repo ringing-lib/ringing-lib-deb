@@ -1,0 +1,23 @@
+This package was created by Leigh Simpson <leigh.simpson@fusepump.com>.
+
+Source code downloaded from http://ringing-lib.sourceforge.net/
+
+Upstream Authors:
+
+    Martin Bright <martin@boojum.org.uk>
+    Mark Banner <mark@standard8.co.uk>
+    Richard Smith <richard@ex-parrot.com>
+
+Licence:
+
+The Ringing Class Library as a whole, together with the programs that are 
+distributed with it, are under the terms of the GNU General Public License.
+
+However, some of the core files from the Ringing Class Library are licenced 
+under the less restrictive terms of the GNU Lesser General Public License.
+These files are all clearly marked.
+
+On Debian systems, the complete text of the GNU General Public
+License can be found in the file `/usr/share/common-licenses/GPL-2' ;
+the complete text of the GNU Lesser General Public License can be
+found in the file `/usr/share/common-licenses/LGPL-2.1'.
