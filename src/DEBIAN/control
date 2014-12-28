@@ -2,7 +2,7 @@ Package: libringing-dev
 Version: 0.4.0-1
 Architecture: amd64
 Maintainer: Leigh Simpson <code@simpleigh.com>
-Depends: libreadline6, libgdome2-0
+Depends: libreadline6, libgdome2-0, libc6-dev
 Section: libdevel
 Priority: optional
 Homepage: http://ringing-lib.sourceforge.net/
