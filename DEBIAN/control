@@ -1,4 +1,4 @@
-Package: libringing
+Package: libringing-dev
 Version: 0.4.0-1
 Architecture: amd64
 Maintainer: Leigh Simpson <code@simpleigh.com>
