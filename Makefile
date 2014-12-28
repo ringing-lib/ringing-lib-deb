@@ -13,4 +13,4 @@ check: libringing-dev_0.4.0-1_amd64.deb
 	lintian libringing-dev_0.4.0-1_amd64.deb
 
 clean:
-	rm libringing-dev_0.4.0-1_amd64.deb
+	rm -f libringing-dev_0.4.0-1_amd64.deb
