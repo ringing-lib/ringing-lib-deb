@@ -44,11 +44,11 @@ f0aaa07208437789649d42ba0cf3927c  usr/include/ringing/streamutils.h
 e953108e38b3c33fb008a19f05049a8e  usr/include/ringing/xmlout.h
 5b17aedf9b7fe9c443c5b3eafb0e5edc  usr/lib/libringing.a
 0720dc707d2c047c560f5dc8c1a7026e  usr/lib/libringingcore.a
-42b63da906f348423a4d0c077b9fd0bd  usr/lib/libringingcore.la
+452f0b924f145db4671e8b82daa61cd5  usr/lib/libringingcore.la
 e5ad6752fae4ae853802edf268e72147  usr/lib/libringingcore.so
 e5ad6752fae4ae853802edf268e72147  usr/lib/libringingcore.so.0
 e5ad6752fae4ae853802edf268e72147  usr/lib/libringingcore.so.0.0.0
-45db8f558e5cd76b953cb2cef2456139  usr/lib/libringing.la
+c58ceefe0dc77823c5ce66599bc0cb29  usr/lib/libringing.la
 a2259569a815367edda4cd81b21e12bd  usr/lib/libringing.so
 a2259569a815367edda4cd81b21e12bd  usr/lib/libringing.so.0
 a2259569a815367edda4cd81b21e12bd  usr/lib/libringing.so.0.0.0
