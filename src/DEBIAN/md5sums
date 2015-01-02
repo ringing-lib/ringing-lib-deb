@@ -42,12 +42,12 @@ f0aaa07208437789649d42ba0cf3927c  usr/include/ringing/streamutils.h
 5d37aeeeffb4b505fd09726b4bfd3ee9  usr/include/ringing/touch.h
 640c45fb60eb99aa5ff80e9312494f10  usr/include/ringing/xmllib.h
 e953108e38b3c33fb008a19f05049a8e  usr/include/ringing/xmlout.h
-5b17aedf9b7fe9c443c5b3eafb0e5edc  usr/lib/libringing.a
-0720dc707d2c047c560f5dc8c1a7026e  usr/lib/libringingcore.a
+a0d637386a8cb8dfd83c5bbd762b5d0b  usr/lib/libringing.a
+32fb245cbbd403e4c1e19d8ee5a2c21d  usr/lib/libringingcore.a
 452f0b924f145db4671e8b82daa61cd5  usr/lib/libringingcore.la
 e5ad6752fae4ae853802edf268e72147  usr/lib/libringingcore.so.0.0.0
 c58ceefe0dc77823c5ce66599bc0cb29  usr/lib/libringing.la
 a2259569a815367edda4cd81b21e12bd  usr/lib/libringing.so.0.0.0
-751eb35d84b150d8430fc698a7ef1b54  usr/share/doc/libringing-dev/changelog.Debian.gz
+3d236e0d0b2d3f42efcb6707624f01d4  usr/share/doc/libringing-dev/changelog.Debian.gz
 08a53c5c5eee0509ff9cfd00df12e685  usr/share/doc/libringing-dev/copyright
 917da2d34521fc8acd30894d68eb7aa6  usr/share/lintian/overrides/libringing-dev
