@@ -1,6 +1,6 @@
 .PHONY: check clean
 
-deb_name = libringing-dev_0.4.0-2_amd64.deb
+deb_name = libringing-dev_0.4.0-3_amd64.deb
 
 $(deb_name):
 	find src -perm 0664 -exec chmod 0644 {} \;
