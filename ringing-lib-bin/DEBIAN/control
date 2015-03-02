@@ -1,0 +1,13 @@
+Package: libringing-bin
+Version: 0.4.0-4
+Architecture: amd64
+Maintainer: Leigh Simpson <code@simpleigh.com>
+Depends: libreadline6, libgdome2-0, libc6-dev, libringing-dev
+Section: misc
+Priority: optional
+Homepage: http://ringing-lib.github.io/
+Description: Ringing Class Library (programs)
+ The Ringing Class Library is a collection of C++ classes which represent the
+ objects studied in English change ringing. These include rows, changes, methods
+ and method libraries.
+Installed-Size: 1766
