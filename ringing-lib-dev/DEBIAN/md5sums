@@ -48,6 +48,6 @@ e953108e38b3c33fb008a19f05049a8e  usr/include/ringing/xmlout.h
 e5ad6752fae4ae853802edf268e72147  usr/lib/libringingcore.so.0.0.0
 c58ceefe0dc77823c5ce66599bc0cb29  usr/lib/libringing.la
 a2259569a815367edda4cd81b21e12bd  usr/lib/libringing.so.0.0.0
-e46b4425de7b1c448d46e877e9d4a70d  usr/share/doc/libringing-dev/changelog.Debian.gz
+c26e9cd376193a7f9d3dc70461ed2c38  usr/share/doc/libringing-dev/changelog.Debian.gz
 7f3b91193c4b0144104d4662f0da5e1c  usr/share/doc/libringing-dev/copyright
 917da2d34521fc8acd30894d68eb7aa6  usr/share/lintian/overrides/libringing-dev
