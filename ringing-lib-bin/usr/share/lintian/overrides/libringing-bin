@@ -1,0 +1,15 @@
+# TODO: should fix in upstream
+libringing-bin: manpage-has-useless-whatis-entry usr/share/man/man1/gsiril.1.gz
+
+# TODO: should write manpages in upstream
+libringing-bin: binary-without-manpage usr/bin/extent
+libringing-bin: binary-without-manpage usr/bin/fextent
+libringing-bin: binary-without-manpage usr/bin/methsearch
+libringing-bin: binary-without-manpage usr/bin/musgrep
+libringing-bin: binary-without-manpage usr/bin/printmethod
+libringing-bin: binary-without-manpage usr/bin/psline
+libringing-bin: binary-without-manpage usr/bin/ringmethod
+libringing-bin: binary-without-manpage usr/bin/rowcalc
+libringing-bin: binary-without-manpage usr/bin/spliceplan
+libringing-bin: binary-without-manpage usr/bin/splices
+libringing-bin: binary-without-manpage usr/bin/touchsearch

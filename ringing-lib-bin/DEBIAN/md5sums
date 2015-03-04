@@ -12,4 +12,5 @@ a6b6628e4f04c7414dceadd4366ac9b3  usr/bin/splices
 452ec1316c3b3b046fcdc1d65cf863ff  usr/bin/touchsearch
 c8ee71cd06cb451681498bf4c35d8e2f  usr/share/doc/libringing-bin/changelog.Debian.gz
 7f3b91193c4b0144104d4662f0da5e1c  usr/share/doc/libringing-bin/copyright
+c4249a230f22fecbd81431ff50ae03aa  usr/share/lintian/overrides/libringing-bin
 cea45d14f9608a052172a31d522092ef  usr/share/man/man1/gsiril.1.gz
