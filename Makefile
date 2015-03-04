@@ -19,6 +19,8 @@ $(bin_name):
 	find ringing-lib-bin -perm 0775 -exec chmod 0755 {} \;
 	[ -e ringing-lib-bin/usr/bin/gsirilic ] || ln -s gsiril ringing-lib-bin/usr/bin/gsirilic
 	[ -e ringing-lib-bin/usr/bin/msiril   ] || ln -s gsiril ringing-lib-bin/usr/bin/msiril
+	[ -e ringing-lib-bin/usr/share/man/man1/gsirilic.1.gz ] || ln -s gsiril.1.gz ringing-lib-bin/usr/share/man/man1/gsirilic.1.gz
+	[ -e ringing-lib-bin/usr/share/man/man1/msiril.1.gz   ] || ln -s gsiril.1.gz ringing-lib-bin/usr/share/man/man1/msiril.1.gz
 	fakeroot dpkg-deb --build ringing-lib-bin $(bin_name)
 
 check: $(dev_name) $(bin_name)
