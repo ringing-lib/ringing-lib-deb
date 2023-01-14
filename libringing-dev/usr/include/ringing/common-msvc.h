@@ -17,7 +17,7 @@
 // License along with this library; if not, write to the Free Software
 // Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-// $Id: common-msvc.h,v 1.19 2008/05/15 16:36:56 ras52 Exp $
+// $Id$
 
 #ifndef RINGING_COMMON_MSVC_H
 #define RINGING_COMMON_MSVC_H

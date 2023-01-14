@@ -1,5 +1,5 @@
-// -*- C++ -*- peal.h - Details of a peal
-// Copyright (C) 2004 Richard Smith <richard@ex-parrot.com>.
+// -*- C++ -*- method_stream.h - lightweight output of methods
+// Copyright (C) 2021, 2022 Richard Smith <richard@ex-parrot.com>.
 
 // This library is free software; you can redistribute it and/or
 // modify it under the terms of the GNU Lesser General Public
@@ -15,10 +15,8 @@
 // License along with this library; if not, write to the Free Software
 // Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-// $Id$
-
-#ifndef RINGING_PEAL_H
-#define RINGING_PEAL_H
+#ifndef RINGING_METHOD_STREAM_H
+#define RINGING_METHOD_STREAM_H
 
 #include <ringing/common.h>
 
@@ -30,39 +28,24 @@
 #pragma interface
 #endif
 
-#include <string>
-#include <ringing/libfacet.h>
+#include <ringing/libout.h>
 
 RINGING_START_NAMESPACE
 
 RINGING_USING_STD
 
-class peal {
+class RINGING_API method_stream : public libout {
 public:
-  struct date {
-    date() : day(0), month(0), year(0) {}
-    date( int day, int month, int year )
-      : day(day), month(month), year(year) {}
+  enum name_form { payload_or_name, payload, name, full_title, none };
 
-    int day, month, year;
-  };
-
-  peal() {}
-  peal( const date& d, const string& l ) : d(d), l(l) {}
-
-  date const& when() const { return d; }
-  string const& where() const { return l; }
+  explicit method_stream(bool inc_bells = false, name_form = payload_or_name );
 
 private:
-  date d;
-  string l;
+  class impl;
 };
 
-RINGING_DECLARE_LIBRARY_FACET( first_tower_peal, peal );
-RINGING_DECLARE_LIBRARY_FACET( first_hand_peal,  peal );
 
-RINGING_DECLARE_LIBRARY_FACET( rw_ref, string );
 
 RINGING_END_NAMESPACE
 
-#endif
+#endif // RINGING_METHOD_STREAM_H

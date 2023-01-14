@@ -1,5 +1,5 @@
 // -*- C++ -*- libbase.h - base class for both library and libout
-// Copyright (C) 2001, 2002, 2004, 2009, 2010 
+// Copyright (C) 2001, 2002, 2004, 2009, 2010, 2021
 // Martin Bright <martin@boojum.org.uk>
 // and Richard Smith <richard@ex-parrot.com>.
 
@@ -17,7 +17,7 @@
 // License along with this library; if not, write to the Free Software
 // Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-// $Id: libbase.h,v 1.3 2010/10/19 18:50:47 ras52 Exp $
+// $Id$
 
 #ifndef RINGING_LIBBASE_H
 #define RINGING_LIBBASE_H
@@ -96,12 +96,21 @@ public:
 
     virtual shared_pointer< library_facet_base > 
       get_facet( const library_facet_id& id ) const;
-
+    virtual void set_facet( shared_pointer< library_facet_base > const& f );
   };
 
   // Public accessor functions
+
+  // Name is the name as it is in the method collection, which may 
+  // include some or all of the classor stage names.
   string name() const      { return pimpl->name(); }
+
+  // Base name is just name, with all class and stage names stripped.
   string base_name() const { return pimpl->base_name(); }
+
+  // Full name includes all classes and stage names.
+  string fullname() const { return meth().fullname(); }
+
   string pn() const        { return pimpl->pn(); }
   int bells() const        { return pimpl->bells(); }
   method meth() const      { return pimpl->meth(); }
@@ -117,6 +126,13 @@ public:
   }
 
   template <class Facet>
+  void set_facet( typename Facet::type const& raw, Facet const* = NULL )
+  {
+    shared_pointer< library_facet_base > f( new Facet(raw) );
+    pimpl->set_facet(f);
+  }
+
+  template <class Facet>
   bool has_facet( Facet const* = NULL ) const 
   {
     return pimpl->has_facet( Facet::id );
@@ -126,6 +142,9 @@ public:
   shared_pointer< library_facet_base > 
       get_facet( const library_facet_id& id ) const
   { return pimpl->get_facet( id ); }
+
+  void set_facet( shared_pointer< library_facet_base > const& f )
+  { return pimpl->set_facet( f ); }
 
   bool has_facet( const library_facet_id& id ) const
   { return pimpl->has_facet( id ); }

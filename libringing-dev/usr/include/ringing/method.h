@@ -1,5 +1,5 @@
 // -*- C++ -*- method.h - Classes for dealing with methods
-// Copyright (C) 2001, 2009, 2010, 2011, 2014 
+// Copyright (C) 2001, 2009, 2010, 2011, 2014, 2020, 2021
 // Martin Bright <martin@boojum.org.uk> and
 // Richard Smith <richard@ex-parrot.com>
 
@@ -17,7 +17,7 @@
 // License along with this library; if not, write to the Free Software
 // Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-// $Id: method.h,v 1.31 2014/12/04 16:20:36 ras52 Exp $
+// $Id$
 
 #ifndef RINGING_METHOD_H
 #define RINGING_METHOD_H
@@ -53,16 +53,7 @@ class row;
 
 // method - A method.
 class RINGING_API method : public vector<change> {
-private:
-  int b;                        // The number of bells
-  string myname;		// The name of the method, without Major etc. 
-
-  static const char *txt_classes[12];  // Bob, Place etc.
-  static const char *txt_differential; // Differential
-  static const char *txt_stages[20];   // Minimus, Doubles etc.
-
-public: 
-
+ public: 
   enum m_class {
     M_UNKNOWN,
     M_PRINCIPLE,
@@ -83,24 +74,25 @@ public:
   static const char *txt_double; // Double
   static const char *txt_little; // Little
 
-  const char *name(void) const	// Get name
-    { return myname.c_str(); }
-  void name(const char *n)	// Set name
-    { myname = n; }
-  void name(const string& n)
-    { myname = n; }
-  string fullname() const;
+  const char *name() const      { return myname.c_str(); }
+  void name(const string& n)    { myname = n; }
+  string fullname(int year=9999) const;
 
   static const char *stagename(int n); // Get the name of this stage
-  static string classname(int cl); // Get the name of the class
+  static string classname(int cl, int year=9999); // Get the name of the class
 
-  explicit method(int l = 0, int b = 0, const char *n = "Untitled") 
+  // Use txt instead of 'Untitled' for unnamed methods
+  static void set_untitled(string const& txt);
+
+  explicit method(int l = 0, int b = 0, const char *n = txt_untitled) 
     : vector<change>(l, change(b)), b(b), myname(n) {}
 
   // Make a method from place notation
-  method(const char *pn, int b, const char *n = "Untitled");
-  method(const string& pn, int b, const string& n = "Untitled");
-  
+  method(const char *pn, int b, const char *n = txt_untitled);
+  method(const string& pn, int b, const string& n = txt_untitled);
+
+  explicit method(vector<change> const& ch, const string& n = txt_untitled);
+
   ~method() {}
   void swap( method& other ) {
     vector<change>::swap(other); 
@@ -127,7 +119,7 @@ public:
   bool isplain(bell b=0) const;	// Does this bell plain hunt?
   bool hasdodges(bell b) const;	// Does this bell ever dodge?
   bool hasplaces(bell b) const;	// Does this bell make internal places?
-  int methclass(void) const;    // What sort of method is it?
+  int methclass(int year=9999) const;    // What sort of method is it?
   char *lhcode(void) const;	// Return the lead head code
   int symmetry_point() const;   // Point of palindromic symmetry (or -1)
   int symmetry_point(bell b) const;   // Point of palindromic symmetry (or -1)
@@ -153,6 +145,16 @@ public:
 #if RINGING_BACKWARDS_COMPATIBLE(0,3,0)
   char *fullname(char *c) const; // Return the full name
 #endif
+
+ private:
+  int b;                        // The number of bells
+  string myname;		// The name of the method, without Major etc. 
+
+  static const char *txt_untitled;
+
+  static const char *txt_classes[12];  // Bob, Place etc.
+  static const char *txt_differential; // Differential
+  static const char *txt_stages[20];   // Minimus, Doubles etc.
 };
 
 RINGING_END_NAMESPACE

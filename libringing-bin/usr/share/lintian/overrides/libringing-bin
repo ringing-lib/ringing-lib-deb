@@ -1,9 +1,11 @@
 # TODO: should fix in upstream
-libringing-bin: manpage-has-useless-whatis-entry usr/share/man/man1/gsiril.1.gz
+libringing-bin: manpage-has-bad-whatis-entry usr/share/man/man1/gsiril.1.gz
+libringing-bin: manpage-section-mismatch usr/share/man/man1/gsiril.1.gz:2 1 != (RINGING
 
 # TODO: should write manpages in upstream
 libringing-bin: binary-without-manpage usr/bin/extent
 libringing-bin: binary-without-manpage usr/bin/fextent
+libringing-bin: binary-without-manpage usr/bin/methodlib
 libringing-bin: binary-without-manpage usr/bin/methsearch
 libringing-bin: binary-without-manpage usr/bin/musgrep
 libringing-bin: binary-without-manpage usr/bin/printmethod

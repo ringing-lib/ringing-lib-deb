@@ -26,7 +26,7 @@
 //  This software is provided "as is" without express or implied
 //  warranty, and with no claim as to its suitability for any purpose.
 
-// $Id: pointers.h,v 1.16 2012/05/04 12:07:10 ras52 Exp $
+// $Id$
 
 #ifndef RINGING_POINTERS_H
 #define RINGING_POINTERS_H

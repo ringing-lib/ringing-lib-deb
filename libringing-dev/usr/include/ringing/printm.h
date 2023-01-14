@@ -15,7 +15,7 @@
 // along with this program; if not, write to the Free Software
 // Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-// $Id: printm.h,v 1.14 2008/03/06 10:45:18 mjb47 Exp $
+// $Id$
 
 #ifndef RINGING_PRINTM_H
 #define RINGING_PRINTM_H

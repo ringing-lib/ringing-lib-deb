@@ -15,7 +15,7 @@
 // along with this program; if not, write to the Free Software
 // Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-// $Id: pdf_fonts.h,v 1.6 2006/12/07 12:04:33 ras52 Exp $
+// $Id$
 
 #ifndef RINGING_PDF_FONTS_H
 #define RINGING_PDF_FONTS_H

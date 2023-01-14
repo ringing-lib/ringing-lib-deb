@@ -1,5 +1,6 @@
 // -*- C++ -*- library.h - Things for method libraries
-// Copyright (C) 2001, 2002, 2004, 2009 Martin Bright <martin@boojum.org.uk>
+// Copyright (C) 2001, 2002, 2004, 2009, 2017, 2021
+// Martin Bright <martin@boojum.org.uk>
 // and Richard Smith <richard@ex-parrot.com>.
 
 // This library is free software; you can redistribute it and/or
@@ -16,7 +17,7 @@
 // License along with this library; if not, write to the Free Software
 // Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-// $Id: library.h,v 1.31 2009/10/07 19:44:15 ras52 Exp $
+// $Id$
 
 #ifndef RINGING_LIBRARY_H
 #define RINGING_LIBRARY_H
@@ -58,11 +59,16 @@ class RINGING_API library_base : public virtual libbase::interface {
 public:
   virtual ~library_base() {}		// Got to have a virtual destructor
 
-  // Reading the library.
   virtual method load(const string& s, int stage) const; // Load a method
+
+  // See also find(string) below, which looks up a method by its full name.i
+  // It is not listed here to avoid re-ordering the vtable
   virtual library_entry find(const method& pn) const; // Load by pn
+
+#if RINGING_BACKWARDS_COMPATIBLE(0,4,0)
   virtual int dir(list<string>& result) const;
   virtual int mdir(list<method>& result) const;
+#endif
 
 #if RINGING_BACKWARDS_COMPATIBLE(0,3,0)
   // Writing to the library
@@ -78,6 +84,8 @@ public:
   virtual bool good (void) const = 0;	// Is it in a usable state?
   virtual bool writeable(void) const    // Is it writeable?
     { return false; }
+
+  virtual library_entry find(const string& title) const; // Load by title
 
   // The new style library interface uses iterators
   class const_iterator;
@@ -156,11 +164,16 @@ public:
   library(library_base* i) { this->set_impl(i); }
 
   // Reading the library.
+  library_entry find(const method& pn) const { return lb()->find(pn); }
+  library_entry find(const string& title) const { return lb()->find(title); }
+
   method load(const string& name, int stage=0) const
     { return lb()->load(name, stage); }
-  library_entry find(const method& pn) const { return lb()->find(pn); }
+
+#if RINGING_BACKWARDS_COMPATIBLE(0,4,0)
   int dir(list<string>& result) const { return lb()->dir(result); }
   int mdir(list<method>& result ) const { return lb()->mdir(result); }
+#endif
 
 #if RINGING_BACKWARDS_COMPATIBLE(0,3,0)
   // Writing to the library
@@ -190,6 +203,9 @@ public:
   // Set the path (a colon delimited string) in which we look for libraries
   static void setpath(string const& p);
 
+  // Set the path from $METHOD_LIBRARY_PATH or $METHLIBPATH
+  static void setpath_from_env();
+
 private:
   library_base* lb()
     { return this->libbase::get_impl<library_base>(); }
@@ -201,6 +217,13 @@ private:
   static list<init_function> libtypes;
   static string libpath;
 };
+
+
+
+// cc_collection_id is a general purpose ID for a number in printed 
+// method collections.  
+RINGING_DECLARE_LIBRARY_FACET( cc_collection_id, string );
+// For licensing reasons, we want this out of cclib.h (which is GPL'd)
 
 
 RINGING_END_NAMESPACE

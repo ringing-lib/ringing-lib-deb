@@ -28,7 +28,7 @@
 //
 //  This software is provided "as is" without express or implied warranty.
 
-// $Id: lexical_cast.h,v 1.1 2009/12/30 10:43:08 ras52 Exp $
+// $Id$
 
 #ifndef RINGING_LEXICAL_CAST_H
 #define RINGING_LEXICAL_CAST_H

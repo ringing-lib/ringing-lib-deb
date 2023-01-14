@@ -1,9 +1,6 @@
 # Ignore: this package contains two so files.
 libringing-dev: package-name-doesnt-match-sonames libringing0 libringingcore0
 
-# Standard lintian warning for new packages outside the Debian project.
-libringing-dev: new-package-should-close-itp-bug
-
 # TODO: is it safe to empty these?
 libringing-dev: non-empty-dependency_libs-in-la-file usr/lib/libringing.la
 libringing-dev: non-empty-dependency_libs-in-la-file usr/lib/libringingcore.la

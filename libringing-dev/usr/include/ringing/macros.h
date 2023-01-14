@@ -29,7 +29,7 @@
 //
 //  Revised by Paul Mensonides (2002)
 
-// $Id: macros.h,v 1.33 2010/08/13 07:41:25 ras52 Exp $
+// $Id$
 
 #ifndef RINGING_MACROS_H
 #define RINGING_MACROS_H

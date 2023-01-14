@@ -15,7 +15,7 @@
 // along with this program; if not, write to the Free Software
 // Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-// $Id: print_pdf.h,v 1.15 2009/05/22 19:59:42 ras52 Exp $
+// $Id$
 
 #ifndef RINGING_PRINT_PDF_H
 #define RINGING_PRINT_PDF_H

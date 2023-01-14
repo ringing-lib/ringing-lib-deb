@@ -1,7 +1,7 @@
 // -*- C++ -*- row.h - Classes for rows and changes
-// Copyright (C) 2001, 2007, 2008, 2009, 2010 
-// Martin Bright <martin@boojum.org.uk>
-// and Richard Smith <richard@ex-parrot.com>
+// Copyright (C) 2001, 2007, 2008, 2009, 2010, 2017, 2020, 2021
+// Martin Bright <martin@boojum.org.uk> and
+// Richard Smith <richard@ex-parrot.com>
 
 // This library is free software; you can redistribute it and/or
 // modify it under the terms of the GNU Lesser General Public
@@ -17,7 +17,7 @@
 // License along with this library; if not, write to the Free Software
 // Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-// $Id: row.h,v 1.53 2011/06/12 14:47:31 ras52 Exp $
+// $Id$
 
 
 #ifndef RINGING_ROW_H
@@ -106,13 +106,16 @@ public:
   int bells(void) const { return data.size(); } // How many bells?
   row& rounds(void);		// Set it to rounds
 
-  static row rounds(const int n) { return row(n); } // Return rounds on n bells
+  row conjugate( const row& r ) const;  // Return r^-1 * *this * r
 
-  static row queens(const int n);  // Return queens on n bells
-  static row kings(const int n);   // Return kings on n bells
-  static row tittums(const int n); // Return tittums on n bells
-  static row reverse_rounds(const int n); // Return reverse rounds on n bells
+  static row rounds(int n) { return row(n); } // Return rounds on n bells
 
+  static row queens(int n);        // Return queens on n bells
+  static row kings(int n);         // Return kings on n bells
+  static row tittums(int n);       // Return tittums on n bells
+  static row reverse_rounds(int n);// Return reverse rounds on n bells
+  static row reverse_rounds(int nw, int nh, int nt=0); // nw working bells, 
+                                   // hh hunt bells, nt total bells
   static row cyclic(int n, int h=1, int c=1); // Return cyclic lead head 
                                    // (13456..2)^c on n bells with h hunt bells
   static row pblh(int n, int h=1); // Return first plain bob lead head on 
@@ -122,6 +125,8 @@ public:
   int ispblh(int h) const;	// Which plain bob lh (with h hunts) is it?
   int sign(void) const;         // Return whether it's odd or even
   string cycles() const;        // Express it as a product of disjoint cycles
+  size_t num_cycles() const;    // How many cycles are there?
+  size_t cycle_size(int b) const;   // Size of the cylce of bell b.
   int order(void) const;	    // Return the order
   friend RINGING_API ostream& operator<<(ostream&, const row&);
   friend RINGING_API istream& operator>>(istream&, row&);
@@ -130,6 +135,7 @@ public:
   size_t hash() const;
 
   int find(bell const& b) const;// Finds the bell
+  void swap(int i, int j) { RINGING_PREFIX_STD swap( data[i], data[j] ); }
   
   struct invalid : public invalid_argument {
     invalid();

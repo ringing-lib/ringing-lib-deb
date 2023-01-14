@@ -15,7 +15,7 @@
 // along with this program; if not, write to the Free Software
 // Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-// $Id: touch.h,v 1.17 2007/03/21 16:29:41 ras52 Exp $
+// $Id$
 
 #ifndef RINGING_TOUCH_H
 #define RINGING_TOUCH_H

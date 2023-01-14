@@ -22,7 +22,7 @@
 // indicated by ***.  The expression @VARIABLE@ should be replaced by
 // the value appropriate for your system.
 
-// $Id: common-am.h.in,v 1.14 2008/05/15 16:36:56 ras52 Exp $
+// $Id$
 
 #ifndef RINGING_COMMON_AM_H
 #define RINGING_COMMON_AM_H
@@ -82,7 +82,7 @@
 
 // *** Define this to be 1 if want to include termcap support
 // or to 0 otherwise.
-#define RINGING_USE_TERMCAP 0
+#define RINGING_USE_TERMCAP 1
 
 // *** Define this to be 1 if want to include GNU readline support
 // or to 0 otherwise.

@@ -28,7 +28,7 @@
 //
 //  This software is provided "as is" without express or implied warranty.
 
-// $Id: streamutils.h,v 1.14 2011/06/12 16:08:13 ras52 Exp $
+// $Id$
 
 #ifndef RINGING_STREAMUTILS_H
 #define RINGING_STREAMUTILS_H

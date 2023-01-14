@@ -15,7 +15,7 @@
 // along with this program; if not, write to the Free Software
 // Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-// $Id: search_base.h,v 1.7 2007/10/11 15:42:18 ras52 Exp $
+// $Id$
 
 #ifndef RINGING_SEARCH_BASE_H
 #define RINGING_SEARCH_BASE_H

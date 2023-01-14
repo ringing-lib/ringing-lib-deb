@@ -1,5 +1,5 @@
 // -*- C++ -*- proof.h - Proving Stuff
-// Copyright (C) 2001, 2002, 2006, 2008, 2011 
+// Copyright (C) 2001, 2002, 2006, 2008, 2011, 2021
 // Mark Banner <mark@standard8.co.uk>
 // and Richard Smith <richard@ex-parrot.com>
 
@@ -17,7 +17,7 @@
 // along with this program; if not, write to the Free Software
 // Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-// $Id: proof.h,v 1.27 2011/08/23 22:45:28 ras52 Exp $
+// $Id$
 
 
 #ifndef RINGING_PROOF_H
@@ -93,7 +93,7 @@ public:
   size_t count_row( const row& r ) const;
 
   // The length of the touch
-  size_t size() const { return m.size(); }
+  size_t size() const;
 
   size_t duplicates() const { return dups; }
 

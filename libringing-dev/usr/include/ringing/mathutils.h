@@ -17,7 +17,7 @@
 // License along with this library; if not, write to the Free Software
 // Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-// $Id: mathutils.h,v 1.7 2010/08/25 13:22:24 ras52 Exp $
+// $Id$
 
 
 #ifndef RINGING_MATH_H

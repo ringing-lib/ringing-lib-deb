@@ -1,7 +1,7 @@
 .PHONY: build check clean
 
-dev_name = libringing-dev_0.4.0-4_amd64.deb
-bin_name = libringing-bin_0.4.0-4_amd64.deb
+dev_name = libringing-dev_0.4.0-5_amd64.deb
+bin_name = libringing-bin_0.4.0-5_amd64.deb
 
 build: $(dev_name) $(bin_name)
 

@@ -25,7 +25,7 @@
 // express or implied warranty, and with no claim as to its suitability for
 // any purpose.
 
-// $Id: iteratorutils.h,v 1.1 2010/08/24 14:28:06 ras52 Exp $
+// $Id$
 
 #ifndef RINGING_ITERATOR_UTILS_H
 #define RINGING_ITERATOR_UTILS_H

@@ -16,7 +16,7 @@
 // along with this program; if not, write to the Free Software
 // Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-// $Id: extent.h,v 1.22 2012/05/03 14:19:29 ras52 Exp $
+// $Id$
 
 #ifndef RINGING_EXTENT_H
 #define RINGING_EXTENT_H

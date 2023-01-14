@@ -1,5 +1,5 @@
 // -*- C++ -*- group.h - Class representing a group
-// Copyright (C) 2003, 2009, 2011 Richard Smith <richard@ex-parrot.com>
+// Copyright (C) 2003, 2009, 2011, 2017 Richard Smith <richard@ex-parrot.com>
 
 // This program is free software; you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -15,7 +15,7 @@
 // along with this program; if not, write to the Free Software
 // Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-// $Id: group.h,v 1.9 2011/11/22 15:11:14 ras52 Exp $
+// $Id$
 
 #ifndef RINGING_GROUP_H
 #define RINGING_GROUP_H
@@ -61,14 +61,36 @@ public:
   const_iterator end()   const { return v.end();   }
   size_t         size()  const { return v.size();  }
 
-  void swap( group& g ) { v.swap(g.v); }
+  void swap( group& g ) { 
+     size_t tmp(b); b=g.b; g.b=tmp;
+     v.swap(g.v); o.swap(g.o);  
+  }
 
   // Named constructors
   static group symmetric_group(int nw, int nh = 0, int nt = 0);
   static group alternating_group(int nw, int nh = 0, int nt = 0);
 
+  // Preferred aliases
+  static group symmetric(int nw, int nh=0, int nt=0) 
+    { return symmetric_group(nw, nh, nt); }
+  static group alternating(int nw, int nh=0, int nt=0) 
+    { return alternating_group(nw, nh, nt); }
+   
+  static group trivial(int nt); // Group of order 1
+
+  // These come in two version, _c and _r depending on whether the 
+  // nw-cycle is row::cyclic or row::pblh.  D(n) is defined here 
+  // as a group of order 2n.
+  static group dihedral_c(int nw, int nh = 0, int nt = 0);
+  static group dihedral_r(int nw, int nh = 0, int nt = 0);
+  static group cyclic_c(int nw, int nh = 0, int nt = 0);
+  static group cyclic_r(int nw, int nh = 0, int nt = 0);
+
+  static group direct_product( group const& a, group const& b );
+
   // Congugate by r to get { r^-1 g r : g \in *this }
   group conjugate( const row& r ) const; 
+  group even_subgroup() const;
 
   friend bool operator==( const group& a, const group& b );
   friend bool operator< ( const group& a, const group& b );

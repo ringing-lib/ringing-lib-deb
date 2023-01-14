@@ -1,5 +1,5 @@
 // -*- C++ -*- methodset.h - A set of methods with input and output interfaces
-// Copyright (C) 2009, 2010, 2011 Richard Smith <richard@ex-parrot.com>
+// Copyright (C) 2009, 2010, 2011, 2021 Richard Smith <richard@ex-parrot.com>
 
 // This program is free software; you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -15,7 +15,7 @@
 // along with this program; if not, write to the Free Software
 // Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-// $Id: methodset.h,v 1.4 2011/08/23 22:47:25 ras52 Exp $
+// $Id$
   
 #ifndef RINGING_METHODSET_H
 #define RINGING_METHODSET_H
@@ -74,9 +74,17 @@ public:
   void append( method const& );
 
   template <class InputIterator>
-  void append( InputIterator first, InputIterator last ) {
-    for ( ; first != last; ++first ) this->append(*first); 
+  size_t append( InputIterator first, InputIterator last ) {
+    size_t n = 0;
+    for ( ; first != last; ++first, ++n ) this->append(*first); 
+    return n;
   }
+
+  // Load the specified file and append to this methodset
+  size_t import_library( string const& filename );
+
+  // Load any libraries referenced by the METHOD_LIBRARY variable
+  size_t import_libraries_from_env();
 
 private:
   void init();
