@@ -1,0 +1,30 @@
+name: Build
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run:
+          sudo apt-get install
+            libgdome2-0
+            libreadline8
+            lintian
+
+      - name: Build
+        run: make
+
+      - name: Check
+        run: make check
+
+      - name: Install dev package
+        run: sudo dpkg --install libringing-dev_*_amd64.deb
+
+      - name: Install bin package
+        run: sudo dpkg --install libringing-bin_*_amd64.deb
